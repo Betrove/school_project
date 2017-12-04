@@ -1,0 +1,45 @@
+#include "accountbaruserwidget.h"
+#include "ui_accountbaruserwidget.h"
+#include "QMessageBox"
+AccountBarUserWidget::AccountBarUserWidget(User user) :
+    QWidget(NULL),currentUser(user),
+    ui(new Ui::AccountBarUserWidget)
+{
+    ui->setupUi(this);
+    QFont welcomeFont("arial",10);
+    QLabel* lblWelcome = new QLabel(this);
+    ClickableLabel* lblSettings = new ClickableLabel(this);
+    QLabel* lblSeperator = new QLabel(this);
+    ClickableLabel* lblLogout = new ClickableLabel(this);
+
+    QString str;
+    str.append("Welcome, ");
+    str.append(user.getUsername().c_str());
+
+    welcomeFont.setBold(true);
+    lblWelcome->setFont(welcomeFont);
+
+    lblWelcome->setText(str);
+    lblSettings->setText("Settings");
+    lblSeperator->setText("|");
+    lblLogout->setText("Logout");
+
+    lblWelcome->setMargin(5);
+    ui->horizontalLayout->addWidget(lblWelcome);
+    ui->horizontalLayout->addWidget(lblSettings);
+    ui->horizontalLayout->addWidget(lblSeperator);
+    ui->horizontalLayout->addWidget(lblLogout);
+
+    connect(lblLogout,SIGNAL(clicked()),this,SLOT(logoutLabelClicked()));
+
+}
+
+AccountBarUserWidget::~AccountBarUserWidget()
+{
+    delete ui;
+}
+
+void AccountBarUserWidget::logoutLabelClicked()
+{
+    emit logoutRequested();
+}

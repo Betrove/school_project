@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file alias="startupViewImage">startpage_background.jpg</file>
+    </qresource>
+</RCC>

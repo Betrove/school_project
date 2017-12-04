@@ -1,0 +1,32 @@
+#ifndef TOPBARWIDGET_H
+#define TOPBARWIDGET_H
+
+#include <QWidget>
+#include "Services/servicemanager.h"
+#include "Views/AccountBar/loginstate_loggedin.h"
+#include "Views/AccountBar/accountwidget.h"
+#include "Views/Login/userloginview.h"
+
+
+namespace Ui {
+class TopBarWidget;
+}
+
+class TopBarWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    TopBarWidget(const ServiceManager& serviceManager);
+    ~TopBarWidget();
+private slots:
+    void onLoginActivated();
+    void onLoginSuccessful(User user);
+
+private:
+    Ui::TopBarWidget *ui;
+    QWidget* currentWidget;
+    const ServiceManager& serviceManager;
+};
+
+#endif // TOPBARWIDGET_H
