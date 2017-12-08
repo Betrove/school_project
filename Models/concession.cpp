@@ -3,7 +3,7 @@
 /*********************************************
 * Constructor Concession: Class Concession
 ----------------------------------------------
-* Sets up the label class
+* Sets up the Concession class
 **********************************************/
 Concession::Concession()
 {
@@ -47,7 +47,6 @@ void Concession::setItemName(std::string name)
 --------------------------------------------
 * Preconditions:
 * No parameter needed
-in the UI
 * Postconditions:
 * returns the price of the item
 -------------------------------------------

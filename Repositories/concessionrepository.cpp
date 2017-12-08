@@ -1,10 +1,27 @@
 #include "concessionrepository.h"
 
+/*********************************************
+* Constructor ConcessionRepository:
+*   Class ConcessionRepository
+----------------------------------------------
+* Sets up the object
+**********************************************/
 ConcessionRepository::ConcessionRepository()
 {
 
 }
 
+/************************************
+* Method void create(Concession)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- obj(Concession) - New item
+* Postconditions:
+* Item is added to repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void ConcessionRepository::create(Concession obj)
 {
      QSqlQuery query;
@@ -21,7 +38,17 @@ void ConcessionRepository::create(Concession obj)
 
 
 }
-
+/************************************
+* Method concession retrieve(int)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- id(int) - item number
+* Postconditions:
+* Item is retrieved from repository
+-----------------------------------
+* Returns nothing
+**************************************/
 Concession ConcessionRepository::retrieve(int id)
 {
     QString itemname;
@@ -52,6 +79,17 @@ Concession ConcessionRepository::retrieve(int id)
    return instance;
 }
 
+/************************************
+* Method void update(Concession)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- obj(Concession) - item
+* Postconditions:
+* Item is updated in repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void ConcessionRepository::update(Concession obj)
 {
     QSqlQuery query;
@@ -69,7 +107,17 @@ void ConcessionRepository::update(Concession obj)
 
     query.exec();
 }
-
+/************************************
+* Method void deleteObject(Concession)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- id(int) - item number
+* Postconditions:
+* Item is deleted from repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void ConcessionRepository::deleteObject(Concession obj)
 {
     QSqlQuery query;
@@ -79,7 +127,17 @@ void ConcessionRepository::deleteObject(Concession obj)
 
     query.exec();
 }
-
+/************************************
+* Method vector<Concessiom> getall()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Item are returned from repository
+* in a vector
+-----------------------------------
+* Returns vector of type Concession
+**************************************/
 std::vector<Concession> ConcessionRepository::getAll()
 {
     std::vector<Concession> items;

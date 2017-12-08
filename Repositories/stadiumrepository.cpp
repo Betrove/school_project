@@ -1,30 +1,86 @@
 #include "stadiumrepository.h"
 
+/*********************************************
+* Constructor StadiumRepository:
+*   Class Stadium Repository
+----------------------------------------------
+* Sets up the object
+**********************************************/
 StadiumRepository::StadiumRepository()
 {
 
 }
-
+/************************************
+* Method void create(Concession)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- obj(Stadium) - New item
+* Postconditions:
+* Item is added to repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void StadiumRepository::create(Stadium object)
 {
 
 }
-
+/************************************
+* Method stadium retrieve(int)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- id(int) - item number
+* Postconditions:
+* Item is retrieved from repository
+-----------------------------------
+* Returns nothing
+**************************************/
 Stadium StadiumRepository::retrieve(int id)
 {
    return Stadium();
 }
-
+/************************************
+* Method void update(Stadium)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- obj(Stadium) - item
+* Postconditions:
+* Item is updated in repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void StadiumRepository::update(Stadium object)
 {
 
 }
-
+/************************************
+* Method void deleteObject(Stadium)
+------------------------------------
+* Preconditions:
+* One parameter needed:
+*	- id(int) - item number
+* Postconditions:
+* Item is deleted from repository
+-----------------------------------
+* Returns nothing
+**************************************/
 void StadiumRepository::deleteObject(Stadium object)
 {
 
 }
-
+/************************************
+* Method vector<Stadium> getall()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Item are returned from repository
+* in a vector
+-----------------------------------
+* Returns vector of type Stadium
+**************************************/
 std::vector<Stadium> StadiumRepository::getAll()
 {
     std::vector<Stadium> stadiums;
@@ -53,7 +109,18 @@ std::vector<Stadium> StadiumRepository::getAll()
 
     return stadiums;
 }
-
+/************************************
+* Method vector<Stadium>
+*       getallOrderedByGrass()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Item are returned from repository
+* in a vector
+-----------------------------------
+* Returns vector of type Stadium
+**************************************/
 std::vector<Stadium> StadiumRepository::getAllOrderedByGrass()
 {
     std::vector<Stadium> stadiums;
@@ -82,7 +149,18 @@ std::vector<Stadium> StadiumRepository::getAllOrderedByGrass()
 
     return stadiums;
 }
-
+/************************************
+* Method vector<Stadium>
+*       getallOrderedByLeague()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Item are returned from repository
+* in a vector
+-----------------------------------
+* Returns vector of type Stadium
+**************************************/
 std::vector<Stadium> StadiumRepository::getAllOrderedByLeague()
 {
     std::vector<Stadium> stadiums;
@@ -111,7 +189,18 @@ std::vector<Stadium> StadiumRepository::getAllOrderedByLeague()
 
     return stadiums;
 }
-
+/************************************
+* Method vector<Stadium>
+*       getallOrderedByOpeningDate()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Item are returned from repository
+* in a vector
+-----------------------------------
+* Returns vector of type Stadium
+**************************************/
 std::vector<Stadium> StadiumRepository::getAllOrderedByOpeningDate()
 {
     std::vector<Stadium> stadiums;

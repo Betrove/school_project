@@ -39,9 +39,7 @@ signals:
     void hover();
 
 protected:
-    /*************
-     * Mutator
-     ************/
+
     void mousePressEvent(QMouseEvent* event);
 
 
