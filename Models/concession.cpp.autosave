@@ -47,7 +47,6 @@ void Concession::setItemName(std::string name)
 --------------------------------------------
 * Preconditions:
 * No parameter needed
-in the UI
 * Postconditions:
 * returns the price of the item
 -------------------------------------------
