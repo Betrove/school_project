@@ -1,6 +1,12 @@
 #include "accountbaruserwidget.h"
 #include "ui_accountbaruserwidget.h"
 #include "QMessageBox"
+/*********************************************
+* Constructor AccountBarUserWidget:
+*           Class AccountBarUserWidget
+----------------------------------------------
+* Sets up the AccountBarUserWidget object
+**********************************************/
 AccountBarUserWidget::AccountBarUserWidget(User user) :
     QWidget(NULL),currentUser(user),
     ui(new Ui::AccountBarUserWidget)
@@ -33,12 +39,27 @@ AccountBarUserWidget::AccountBarUserWidget(User user) :
     connect(lblLogout,SIGNAL(clicked()),this,SLOT(logoutLabelClicked()));
 
 }
-
+/*********************************************
+* ~Destructor AccountBarUserWidget:
+*       Class AccountBarUserWidget
+----------------------------------------------
+* Deletes the AccountBarUserWidget object
+**********************************************/
 AccountBarUserWidget::~AccountBarUserWidget()
 {
     delete ui;
 }
-
+/************************************
+* Method void logoutLabelClicked()
+------------------------------------
+* Preconditions:
+* No parameters needed
+* Postconditions:
+* Emits a signal for the logout to
+* be requested
+-----------------------------------
+* Returns nothing
+**************************************/
 void AccountBarUserWidget::logoutLabelClicked()
 {
     emit logoutRequested();

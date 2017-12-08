@@ -11,14 +11,27 @@
 namespace Ui {
 class AccountBarWidget;
 }
-
+/*****************************************
+ * AccountBarWidget Class
+ * ---------------------------------------
+ * This class represents the account widget
+ * to monitor the events pressed on screen
+ * in the bar widget
+ ****************************************/
 class AccountBarWidget : public QWidget
 {
     Q_OBJECT
 
 public:
+    /**************************
+     * Constructor/Destructor *
+     **************************/
     AccountBarWidget(const ServiceManager& serviceManager);
     ~AccountBarWidget();
+
+    /*************
+     * Mutator
+     ************/
 private slots:
     void onLoginActivated();
     void onLoginSuccessful(User user);
@@ -33,5 +46,61 @@ private:
     QWidget* currentLoginStateWidget;
     const ServiceManager& serviceManager;
 };
-
+/******************************
+ **     CONSTRUCTOR          **
+ ******************************/
+/****************************************************************
+* AcccountBarWidget();
+*   Constructor; Initialize class attributes
+*   Parameters: none
+*   Return: none
+***************************************************************/
+/****************************************************************
+* ~AcccountBarWidget();
+*   Destructor; Deletes class attributes
+*   Parameters: none
+*   Return: none
+***************************************************************/
+/***************
+** Mutators  **
+***************/
+/*******************************************************************
+* void onLoginActivated()
+*
+*   Mutator; activates once the user is logged into the program
+*------------------------------------------------------------------
+*   Parameter: none
+*------------------------------------------------------------------
+*   Return: Nothing
+*******************************************************************/
+/*******************************************************************
+* void onLoginSuccessful()
+*
+*   Mutator; activates once the user is logged into the program. If
+*   they are successful then the program changes the widget type
+*------------------------------------------------------------------
+*   Parameter: none
+*------------------------------------------------------------------
+*   Return: Nothing
+*******************************************************************/
+/*******************************************************************
+* void onLogoutActivated()
+*
+*   Mutator; activates once the user is logs out of the program. If
+*   they are successful then the program changes the screen type
+*------------------------------------------------------------------
+*   Parameter: none
+*------------------------------------------------------------------
+*   Return: Nothing
+*******************************************************************/
+/*******************************************************************
+* void onUserLogout()
+*
+*   Mutator; activates once the user is logs out of the program. If
+*   they are successful then the program changes the screen type
+*------------------------------------------------------------------
+*   Parameter: none
+*------------------------------------------------------------------
+*   Return: Nothing
+*******************************************************************/
 #endif // ACCOUNTBARWIDGET_H
